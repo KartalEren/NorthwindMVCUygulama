@@ -1,0 +1,36 @@
+﻿@model Category
+
+@{
+    ViewData["Title"] = "Kategori Düzenle";
+    Layout = "_Layout";
+
+}
+
+
+<section class="container ">
+    <form asp-action="Edit" method="post" class="row" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">CategoryId:</label>
+            <input asp-for="CategoryId" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">CategoryName:</label>
+            <input asp-for="CategoryName" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Description:</label>
+            <input asp-for="Description" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Picture:</label>
+            <img src="Picture" class="card-img-top" alt="CategoryName" width="50" height="20">
+        </div>
+
+        <form asp-action="Edit">
+            <input type="submit" value="Edit" class="btn btn-primary" />
+            <a asp-action="Index">Back to List</a>
+        </form>
+
+    </form>
+</section>

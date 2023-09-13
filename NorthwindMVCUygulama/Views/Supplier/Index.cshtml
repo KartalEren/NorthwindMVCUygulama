@@ -1,0 +1,57 @@
+﻿@model List<SupplierListView>
+
+@{
+    ViewData["Title"] = "Tedarikçi Listesi";
+    Layout = "_Layout";
+    int sayac = 1;
+}
+
+
+
+<section>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">SupplierId</th>
+                <th scope="col">Şirket Adı</th>
+            </tr>
+        </thead>
+
+        @{
+            foreach (var item in Model)
+            {
+
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">@sayac</th>
+                        <td>@item.SupplierId</td>
+                        <td>@item.CompanyName</td>                     
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.SupplierId" class="btn btn-primary">Düzenle</a>
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.SupplierId" class="btn btn-success">Detaylar</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.SupplierId" class="btn btn-danger">Sil</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+                if (item != null)//yanındaki sayılarıa rtırmak için yaptık, eğerki sayac 0 değilse 1 artır dedik.
+                {
+                    sayac++;
+                }
+
+            }
+        }
+
+
+    </table>
+
+</section>

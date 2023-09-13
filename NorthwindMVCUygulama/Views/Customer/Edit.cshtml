@@ -1,0 +1,64 @@
+﻿@model Customer
+
+@{
+    ViewData["Title"] = "Müşteri Güncelle";
+    Layout = "_Layout";
+
+}
+
+
+<section class="container ">
+    <form asp-action="Edit" method="post" class="row" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">CustomerId:</label>
+            <input asp-for="CustomerId" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">CompanyName:</label>
+            <input asp-for="CompanyName" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">SupplierId:</label>
+            <input asp-for="ContactName" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">CategoryId:</label>
+            <input asp-for="ContactTitle" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">QuantityPerUnit:</label>
+            <input asp-for="Address" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">UnitPrice:</label>
+            <input asp-for="City" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">UnitsInStock:</label>
+            <input asp-for="Region" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">UnitsOnOrder:</label>
+            <input asp-for="PostalCode" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">ReorderLevel:</label>
+            <input asp-for="Country" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Discontinued:</label>
+            <input asp-for="Phone" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Discontinued:</label>
+            <input asp-for="Fax" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+
+        <form asp-action="Edit">
+            <input type="submit" value="Edit" class="btn btn-primary" /> 
+            <a asp-action="Index">Back to List</a>
+        </form>
+
+    </form>
+</section>

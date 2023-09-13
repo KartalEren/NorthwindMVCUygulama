@@ -1,0 +1,63 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Ürün Ekle";
+    Layout = "_Layout";
+
+}
+
+
+<section class="container ">
+
+    <div class="text-danger"> @ViewBag.Error </div>@*Ekrana hata mesjı çıkarır*@
+
+    <form asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">ProductId:</label>
+            <input asp-for="ProductId" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">ProductName:</label>
+            <input asp-for="ProductName" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">SupplierId:</label>
+            <input asp-for="SupplierId" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">CategoryId:</label>
+            <input asp-for="CategoryId" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">QuantityPerUnit:</label>
+            <input asp-for="QuantityPerUnit" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">UnitPrice:</label>
+            <input asp-for="UnitPrice" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">UnitsInStock:</label>
+            <input asp-for="UnitsInStock" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">UnitsOnOrder:</label>
+            <input asp-for="UnitsOnOrder" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">ReorderLevel:</label>
+            <input asp-for="ReorderLevel" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Discontinued:</label>
+            <input asp-for="Discontinued" type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+        </div>
+
+        <form asp-action="Create">
+            <input type="submit" value="Create" class="btn btn-primary" /> 
+            <a asp-action="Index">Back to List</a>
+        </form>
+
+    </form>
+</section>

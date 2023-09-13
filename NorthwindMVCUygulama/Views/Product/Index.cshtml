@@ -1,0 +1,59 @@
+﻿@model List<ProductListView>
+
+@{
+    ViewData["Title"] = "Ürün Listesi";
+    Layout = "_Layout";
+    int sayac = 1;
+}
+<section>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ürün Id</th>
+                <th scope="col">Ürün Adı</th>
+                <th scope="col">Tedarikçi Id</th>
+                <th scope="col">Kategori Id</th>
+            </tr>
+        </thead>
+
+        @{
+            foreach (var item in Model)
+            {
+
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">@sayac</th>
+                        <td>@item.ProductId</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.SupplierId</td>
+                        <td>@item.CategoryId</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-primary">Düzenle</a>
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.ProductId" class="btn btn-success">Detaylar</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-danger">Sil</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+                if (item != null)//yanındaki sayılarıa rtırmak için yaptık, eğerki sayac 0 değilse 1 artır dedik.
+                {
+                    sayac++;
+                }
+
+            }
+        }
+
+
+    </table>
+
+
+</section>
